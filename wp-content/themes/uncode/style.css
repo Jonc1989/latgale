@@ -10,3 +10,33 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: uncode
 Domain Path: /languages/
 */
+
+.id-card-upload-wrapper{
+    margin-top: 80px;
+    background-color: #ffaeb0;
+}
+.photo-upload, .input-block{
+    display: inline-block;
+}
+.photo-upload{
+    width: 30%;
+}
+.input-block{
+    width: 70%;
+}
+.left-card-block, .right-card-block{
+    min-height: 300px;
+}
+.right{
+    float: right;
+}
+#camera{
+    max-width: 40%;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+}
+.image-upload > input
+{
+    display: none;
+}
