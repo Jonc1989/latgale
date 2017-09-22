@@ -13,7 +13,6 @@ Domain Path: /languages/
 
 .id-card-upload-wrapper{
     margin-top: 80px;
-    background-color: #ffaeb0;
 }
 .photo-upload, .input-block{
     display: inline-block;
@@ -35,6 +34,9 @@ Domain Path: /languages/
     height: auto;
     display: block;
     margin: 30px auto;
+}
+#camera.full-width{
+    max-width: 100%;
 }
 .image-upload > input
 {

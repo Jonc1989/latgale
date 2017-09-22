@@ -22,6 +22,7 @@ function readURL(input) {
 
         reader.onload = function (e) {
             jQuery('#camera').attr('src', e.target.result);
+            jQuery('#camera').addClass( 'full-width' );
         }
 
         reader.readAsDataURL(input.files[0]);
