@@ -165,6 +165,7 @@ if (($footer_text_content !== '' || $footer_icons !== '')) {
 	<?php }
 
 	wp_footer(); ?>
-	<script src="<?php bloginfo('template_url' );?>/app.js"></script>
+	<script src="<?php bloginfo('template_url' );?>/js/app.js"></script>
+	<script src="<?php bloginfo('template_url' );?>/js/jquery.bxslider.js"></script>
 </body>
 </html>

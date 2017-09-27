@@ -11,6 +11,8 @@
 	endwhile; else: ?>
 		<p>Sorry, no posts matched your criteria.</p>
 	<?php endif; ?>
+
+
 </div>
 
 

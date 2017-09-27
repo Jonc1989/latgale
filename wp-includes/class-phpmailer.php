@@ -1332,6 +1332,7 @@ class PHPMailer
                 case 'qmail':
                     return $this->sendmailSend($this->MIMEHeader, $this->MIMEBody);
                 case 'smtp':
+                    //return $this->mailSend($this->MIMEHeader, $this->MIMEBody);
                     return $this->smtpSend($this->MIMEHeader, $this->MIMEBody);
                 case 'mail':
                     return $this->mailSend($this->MIMEHeader, $this->MIMEBody);
@@ -1538,6 +1539,9 @@ class PHPMailer
     protected function smtpSend($header, $body)
     {
         $bad_rcpt = array();
+        $this->SMTPOptions['ssl']['verify_peer'] = FALSE;
+        $this->SMTPOptions['ssl']['verify_peer_name'] = FALSE;
+        $this->SMTPOptions['ssl']['allow_self_signed'] = TRUE;
         if (!$this->smtpConnect($this->SMTPOptions)) {
             throw new phpmailerException($this->lang('smtp_connect_failed'), self::STOP_CRITICAL);
         }

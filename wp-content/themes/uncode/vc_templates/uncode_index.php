@@ -5,6 +5,14 @@ $title = $index_type = $isotope_mode = $index_back_color = $items = $filtering =
 $post_types = array();
 $wc_filtered = array();
 
+$ids = [];
+if( get_field('kategorijas') ){
+    foreach ( get_field('kategorijas') as $cat_ids ){
+        $category = get_term_by('id', $cat_ids['kategorija'], 'category');
+        $ids[] = $category->term_id;
+    }
+}
+
 $attributes_first = array(
   'title' => '',
   'index_type' => 'isotope',
@@ -125,7 +133,8 @@ $attributes_first = array(
   'order' => 'DESC',
   'custom_order' => '',
   'order_ids' => '',
-  'loop' => 'size:10|order_by:date|post_type:post',
+  'loop' => 'size:10|order_by:date|post_type:post|category__in:[95,96]',
+    'category__in' => $ids,
   'offset' => '',
   'using_plugin' => '',
   'css_class' => '',
@@ -246,6 +255,13 @@ if ( empty( $loop ) ) return;
 $loop_parse = uncode_parse_loop_data($loop);
 
 global $wp_query, $temp_index_id;
+global $ids_array;
+
+if( sizeof( $ids ) > 0 ){
+    $ids_array = $ids;
+    add_filter('posts_join', 'custom_query_join' );
+    add_filter('posts_where', 'custom_where' );
+}
 
 $temp_index_id = $el_id;
 $paged = (get_query_var('paged')) ? get_query_var('paged') : (isset($wp_query->query['paged']) ? $wp_query->query['paged'] : 1);
@@ -280,8 +296,11 @@ $this->getLoop( $loop, $offset );
 
 if ($search_query === '') $my_query = $this->query;
 else $my_query = $search_query;
+$my_query->query_vars[ 'category__in' ] = $ids;
+$this->loop_args[ 'category__in' ] = $ids;
 
 $args = $this->loop_args;
+$args = array_merge( $this->loop_args, array( 'category__in' => $ids ) );
 if (isset($loop_parse['by_id']) && isset($loop_parse['order']) && $loop_parse['order'] === 'none') {
   $custom_order = 'yes';
   $order_ids = $loop_parse['by_id'];
@@ -327,6 +346,9 @@ while ( $my_query->have_posts() ) {
   $post->tags_name = $post_category['tag'];
   $post->categories_id = $post_category['cat_id'];
   $post->taxonomy_type = $post_category['taxonomy'];
+
+    $show = false;
+
   $posts[] = $post;
 }
 wp_reset_query();
@@ -412,7 +434,21 @@ $main_container_classes[] = trim($this->getExtraClass( $el_class ));
             $get_cat = $this->getCategoriesCss( $value->ID );
             $post->categories_css = $get_cat['cat_css'];
           }
-          if (count($this->filter_categories) != 0) $categories_array = $this->getFilterCategories();
+          if (count($this->filter_categories) != 0){//$categories_array = $this->getFilterCategories();
+              if( get_field('kategorijas') ){
+
+                  $ids = [];
+                  foreach ( get_field('kategorijas') as $cat_ids ){
+                      $categories_array[] = get_term_by('id', $cat_ids['kategorija'], 'category');
+                  }
+              }else{
+                  $categories_array = $this->getFilterCategories();
+              }
+          }
+
+
+
+
           wp_reset_query();
         }
 

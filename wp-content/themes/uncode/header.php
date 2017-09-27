@@ -35,7 +35,7 @@ if (is_admin_bar_showing()) $html_class .= ' admin-mode';
 <?php endif; ?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link rel="stylesheet" href="<?php bloginfo('template_url' );?>/css/bootstrap.css" />
+	<link rel="stylesheet" href="<?php bloginfo('template_url' );?>/css/jquery.bxslider.css" />
 	<link rel="stylesheet" href="<?php bloginfo('template_url' );?>/style.css" />
 <?php wp_head(); ?>
 </head>

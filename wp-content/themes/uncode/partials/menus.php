@@ -46,7 +46,9 @@ if (!class_exists('unmenu')) {
 
 		function __construct($type, $param)
 		{
-			global $LOGO, $metabox_data, $post, $menutype, $adaptive_images, $adaptive_images_async, $ai_width;
+			global $LOGO, $metabox_data, $post, $menutype, $adaptive_images, $adaptive_images_async, $ai_width, $q_config, $wp; $image_path = null;
+
+			
 
 			$general_style = ot_get_option( '_uncode_general_style');
 			$stylemain = ot_get_option( '_uncode_primary_menu_style');
@@ -440,6 +442,9 @@ if (!class_exists('unmenu')) {
 				case 'hmenu-right':
 				case 'hmenu-left':
 				case 'hmenu-justify':
+
+
+
 					$this->html = '<div class="menu-wrapper'.$menu_shrink.$menu_sticky.$menu_no_arrow.'">
 													'.($no_secondary !== 'on' ? $secondary_menu_html : '').'
 													<header id="masthead" class="navbar'.$stylemaincombo.$main_absolute.$menu_sub_animation.' menu-with-logo">
@@ -452,7 +457,7 @@ if (!class_exists('unmenu')) {
 																		</div>
 																		<div class="mmb-container">'.$woo_icon_mobile.'<div class="mobile-menu-button '.$buttonstyle_primary.' lines-button x2"><span class="lines"></span></div></div>
 																	</div>
-																	<div class="col-lg-12 main-menu-container middle">
+																	<div class="col-lg-12 main-menu-container middle x">
 																		<div class="menu-horizontal' . $sub_shadows . '">
 																			<div class="menu-horizontal-inner">
 																				'.wp_nav_menu( array(
@@ -464,7 +469,11 @@ if (!class_exists('unmenu')) {
 																					"fallback_cb"       => "wp_bootstrap_navwalker::fallback",
 																					"walker"            => new wp_bootstrap_navwalker(),
 																					"echo"            => 0)
-																				).(($search !== '' || $type === 'hmenu-justify') ? '<div class="nav navbar-nav navbar-nav-last">'.$search.'</div>' : '');
+																				).(($search !== '' || $type === 'hmenu-justify') ? '<div class="nav navbar-nav navbar-nav-last">'.$search.
+
+					                                                                                                               /*$switch.*/
+
+					                                                                                                               '</div>' : '');
 						if ($no_secondary !== 'on')
 							$this->html .=						'<div class="desktop-hidden">
 														 							'.wp_nav_menu( array(
@@ -716,9 +725,11 @@ if (!class_exists('unmenu')) {
 																		</div>
 																		<div class="mmb-container">'.$woo_icon_mobile.'<div class="mobile-menu-button '.$buttonstyle_primary.' lines-button x2"><span class="lines"></span></div></div>
 																	</div>
+																	
 																</div>';
-
+					
 					$this->html .= 				'<div class="row-inner expand">
+
 																	<div class="main-menu-container">
 																		<div class="vmenu-row-wrapper">
 																			<div class="vmenu-wrap-cell">

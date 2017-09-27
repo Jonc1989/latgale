@@ -220,3 +220,84 @@ function uncode_related_post_call() {
 	}
 }
 endif;
+
+function debug($value)
+{
+  echo '<pre>';
+  print_r($value);
+  echo '</pre>';
+}
+
+function custom_query_join( $join ){
+  $join .= 'LEFT JOIN wp_term_relationships ON (wp_posts.ID = wp_term_relationships.object_id) ';
+  return $join;
+}
+function custom_where( $where = '' ) {
+  global $ids_array;
+
+  $ids = implode( ',', $ids_array );
+  $where .= " AND ( 
+  wp_term_relationships.term_taxonomy_id IN (" . $ids . ")
+)";
+  return $where;
+}
+
+
+//Language switch for menu
+$current_url = home_url(add_query_arg(array(),$wp->request));
+
+if( get_locale() == 'lv_LV'){
+  $image_path = content_url() . '/plugins/qtranslate-x/flags/lv.png';
+}elseif( get_locale() == 'lg_LG' ){
+  $image_path = content_url() . '/plugins/qtranslate-x/flags/lg.png';
+}
+$url = get_option('home');
+
+$switch = '<div class="lang-switch"><a href="#"><img src="' . $image_path . '"> </a>';
+foreach(qtrans_getSortedLanguages() as $language) {
+
+  ?>
+  <?php if( $language != substr(get_locale(),0, 2)){
+    $switch .= '<a href = "' . qtrans_convertURL($current_url, $language, false, true) . '" ><img src="' . content_url() . '/plugins/qtranslate-x/flags/' . $language .'.png"></a >';
+  }
+}
+if ( ! is_admin() ) {
+?>
+  <!--<script>
+    window.onload = function () {
+      jQuery( '#logo-container-mobile .style-light' ).append( '<?php echo $switch ?>' );
+    }
+  </script>-->
+<?php
+  }
+?>
+
+
+
+<?php
+
+
+//Language switch for menu
+
+
+
+
+
+
+
+
+
+
+
+
+//add_filter('wp_mail_smtp_custom_options', 'my_wp_mail_smtp_custom_options');
+//
+//function my_wp_mail_smtp_custom_options($phpmailer) {
+//  $phpmailer->SMTPOptions = array(
+//      'ssl' => array(
+//          'verify_peer' => false,
+//          'verify_peer_name' => false
+//      )
+//  );
+//  return $phpmailer;
+//}

@@ -24,7 +24,7 @@ div.wpcf7-mail-sent-ok {
 }
 
 div.wpcf7-mail-sent-ng {
-	border: 2px solid #ff0000;
+	//border: 2px solid #ff0000;
 }
 
 div.wpcf7-spam-blocked {
