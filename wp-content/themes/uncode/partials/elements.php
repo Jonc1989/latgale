@@ -1438,10 +1438,10 @@ if (!function_exists('uncode_post_info')) {
 			foreach($categories as $category) {
 				$cat_output .= '<a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( esc_html__( "View all posts in %s", 'uncode' ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
 			}
-			$output[] = '<div class="category-info"><span>|</span>' . esc_html__('In','uncode') . ' ' . trim($cat_output, $separator) . '</div>';
+			$output[] = '<div class="category-info"><span>|</span>' . /*esc_html__('In','uncode') .*/ ' ' . trim($cat_output, $separator) . '</div>';
 		}
 
-		$output[] = '<div class="author-info"><span>|</span>' . esc_html__('By','uncode') . ' ' . '<a href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ).'">'.get_the_author().'</a></div>';
+		$output[] = '<div class="author-info"><span>|</span>' . /*esc_html__('By','uncode') .*/ ' ' . '<a href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ).'">'.get_the_author().'</a></div>';
 
 		return '<div class="post-info">' . implode('', $output) . '</div>';
 	}
@@ -1462,7 +1462,7 @@ if (!function_exists('uncode_portfolio_info')) {
 			foreach ( $categories as $cat ) {
 				$cat_output .= '<a href="'.get_term_link($cat->term_id, $cat->taxonomy).'" title="' . esc_attr( sprintf( esc_html__( "View all posts in %s", 'uncode' ), $cat->name ) ) . '">'.$cat->name.'</a>'.$separator;
 			}
-			$output[] = '<div class="category-info">' . esc_html__('In','uncode') . ' ' . trim($cat_output, $separator) . '</div>';
+			$output[] = '<div class="category-info">' . /*esc_html__('In','uncode') .*/ ' ' . trim($cat_output, $separator) . '</div>';
 		}
 		return '<div class="post-info">' . implode('', $output) . '</div>';
 	}

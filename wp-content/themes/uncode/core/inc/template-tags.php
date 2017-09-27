@@ -69,13 +69,13 @@ if ( ! function_exists( 'uncode_post_navigation' ) ) :
 		$output =	'<nav class="post-navigation">
 									<ul class="navigation">';
 
-		$prev = get_previous_post_link( '<li class="page-prev"><span class="btn-container">%link</span></li>', '<i class="fa fa-angle-left"></i><span>'. esc_html($prev_label) . '</span>');
+		$prev = get_previous_post_link( '<li class="page-prev"><span class="btn-container">%link</span></li>', '<i class="fa fa-angle-left"></i><span>'. esc_html($prev_label, 'uncode') . '</span>');
 		if ($prev !== '') $output .= $prev;
-		else $output .= '<li class="page-prev"><span class="btn-container"><span class="btn btn-link btn-icon-left btn-disable-hover"><i class="fa fa-angle-left"></i>'.esc_html($prev_label).'</span></span></li>';
+		else $output .= '<li class="page-prev"><span class="btn-container"><span class="btn btn-link btn-icon-left btn-disable-hover"><i class="fa fa-angle-left"></i>'.esc_html($prev_label, 'uncode').'</span></span></li>';
 		if ($index_btn !== '') $output .=	'<li class="nav-back"><span class="btn-container">'.$index_btn.'</span></li>';
-		$next = get_next_post_link( '<li class="page-next"><span class="btn-container">%link</span></li>', '<span>' . esc_html($next_label) .'</span><i class="fa fa-angle-right"></i>');
+		$next = get_next_post_link( '<li class="page-next"><span class="btn-container">%link</span></li>', '<span>' . esc_html($next_label, 'uncode') .'</span><i class="fa fa-angle-right"></i>');
 		if ($next !== '') $output .= $next;
-		else $output .= '<li class="page-next"><span class="btn-container"><span class="btn btn-link btn-icon-right btn-disable-hover">'.esc_html($next_label).'<i class="fa fa-angle-right"></i></span></span></li>';
+		else $output .= '<li class="page-next"><span class="btn-container"><span class="btn btn-link btn-icon-right btn-disable-hover">'.esc_html($next_label, 'uncode').'<i class="fa fa-angle-right"></i></span></span></li>';
 
 		$output .=	'</ul><!-- .navigation -->
 							</nav><!-- .post-navigation -->';

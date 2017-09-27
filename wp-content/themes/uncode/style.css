@@ -89,8 +89,13 @@ span.wpcf7-list-item{
 }
 .bx-wrapper{
     margin-top: 40px;
+    //display: none;
 }
-
+.pictogram-wrap{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
 
 /* The Modal (background) */
 .modal {

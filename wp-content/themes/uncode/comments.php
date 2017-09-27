@@ -23,12 +23,12 @@ if ( post_password_required() ) {
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if ( have_comments() ) : ?>
-		<h5 class="comments-title">
+		<!--<h5 class="comments-title">
 			<?php
 				printf( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments', 'uncode' ),
 					number_format_i18n( get_comments_number() ) );
 			?>
-		</h5>
+		</h5>-->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation">

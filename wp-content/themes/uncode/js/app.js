@@ -52,10 +52,13 @@ jQuery( document ).ready( function () {
     });
 
     jQuery('.bxslider').bxSlider({
-        minSlides: 10,
-        maxSlides: 10,
+        minSlides: 8,
+        maxSlides: 8,
         pager: false,
-        slideWidth: 100
+        slideWidth: 100,
+        onSliderLoad: function () {
+//            jQuery( '.bx-wrapper' ).show();
+        }
     });
 
 

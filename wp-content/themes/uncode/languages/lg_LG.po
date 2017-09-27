@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-30 17:43+0300\n"
 "POT-Revision-Date: Mon Jul 25 2016 08:51:33 GMT+0700 (SE Asia Standard Time)\n"
-"PO-Revision-Date: 2017-09-27 15:57+0300\n"
+"PO-Revision-Date: 2017-09-27 18:06+0300\n"
 "Language-Team: \n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
@@ -4007,3 +4007,15 @@ msgstr "Kategoriju nav"
 
 msgid "All rights reserved"
 msgstr "vyss cīš aizsorguots"
+
+msgid "All author posts"
+msgstr "Visi autora posti"
+
+msgid "Add comment"
+msgstr "Pievienot komentāru"
+
+msgid "Prev"
+msgstr "Iepriekšējais"
+
+msgid "Next"
+msgstr "Nākamais"
