@@ -48,7 +48,27 @@ if (!class_exists('unmenu')) {
 		{
 			global $LOGO, $metabox_data, $post, $menutype, $adaptive_images, $adaptive_images_async, $ai_width, $q_config, $wp; $image_path = null;
 
-			
+//Language switch for menu
+			$current_url = home_url(add_query_arg(array(),$wp->request));
+
+			if( get_locale() == 'lv_LV'){
+				$image_path = content_url() . '/plugins/qtranslate-x/flags/lv.png';
+			}elseif( get_locale() == 'lg_LG' ){
+				$image_path = content_url() . '/plugins/qtranslate-x/flags/lg.png';
+			}
+			$url = get_option('home');
+
+			$switch = '<div class="lang-switch"><a href="#"><img src="' . $image_path . '"> </a>';
+			foreach(qtrans_getSortedLanguages() as $language) {
+
+				?>
+				<?php if( $language != substr(get_locale(),0, 2)){
+					$switch .= '<a href = "' . qtrans_convertURL($current_url, $language, false, true) . '" ><img src="' . content_url() . '/plugins/qtranslate-x/flags/' . $language .'.png"></a >';
+				}
+			}
+			$switch .= '</div>';
+//Language switch for menu
+
 
 			$general_style = ot_get_option( '_uncode_general_style');
 			$stylemain = ot_get_option( '_uncode_primary_menu_style');
@@ -728,9 +748,9 @@ if (!class_exists('unmenu')) {
 																	
 																</div>';
 					
-					$this->html .= 				'<div class="row-inner expand">
-
-																	<div class="main-menu-container">
+					$this->html .= 				'<div class="row-inner expand">';
+$this->html .= $switch;
+					$this->html .= 											'<div class="main-menu-container">
 																		<div class="vmenu-row-wrapper">
 																			<div class="vmenu-wrap-cell">
 																				<div class="row-inner expand">

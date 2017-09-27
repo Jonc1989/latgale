@@ -988,8 +988,8 @@ if (!function_exists('uncode_create_single_block')) {
 					}
 					if ( uncode_btn_style() !== '' )
 						$btn_shape .= ' ' . uncode_btn_style();
-					if ($single_text === 'overlay' && $single_elements_click !== 'yes') $inner_entry .= '<p class="t-entry-readmore"><span class="btn'.$btn_shape.'">' . esc_html__('Read More','uncode').' </span></p>';
-					else $inner_entry .= '<p class="t-entry-readmore"><a href="'.$create_link.'" class="btn'.$btn_shape.'">' . esc_html__('Read More','uncode').' </a></p>';
+					if ($single_text === 'overlay' && $single_elements_click !== 'yes') $inner_entry .= '<p class="t-entry-readmore"><span class="btn'.$btn_shape.'">' . esc_html__('Read more','uncode').' </span></p>';
+					else $inner_entry .= '<p class="t-entry-readmore"><a href="'.$create_link.'" class="btn'.$btn_shape.'">' . esc_html__('Read more','uncode').' </a></p>';
 				break;
 
 				case 'author':
