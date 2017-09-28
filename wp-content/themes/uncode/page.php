@@ -281,7 +281,7 @@ get_header();
 
 		if ($show_title) {
 			$title_content .= apply_filters( 'uncode_before_body_title', '' );
-			//$title_content .= '<div class="post-title-wrapper"><h1 class="post-title">' . get_the_title() . '</h1></div>';
+			$title_content .= '<div class="post-title-wrapper"><h1 class="post-title">' . get_the_title() . '</h1></div>';
 			$title_content .= apply_filters( 'uncode_after_body_title', '' );
 		}
 
