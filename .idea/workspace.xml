@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3124821-d954-41d0-95b8-16495e588131" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/uncode/partials/menus.php" afterPath="$PROJECT_DIR$/wp-content/themes/uncode/partials/menus.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/uncode/style.css" afterPath="$PROJECT_DIR$/wp-content/themes/uncode/style.css" />
     </list>
     <ignored path="latgale.iws" />
@@ -68,8 +66,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/uncode/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="183" column="1" selection-start-line="183" selection-start-column="1" selection-end-line="183" selection-end-column="1" />
+            <state relative-caret-position="236">
+              <caret line="175" column="1" selection-start-line="175" selection-start-column="1" selection-end-line="175" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -366,12 +364,12 @@
       <workItem from="1506612623305" duration="599000" />
       <workItem from="1506662283584" duration="114000" />
       <workItem from="1506666752530" duration="610000" />
-      <workItem from="1506678664871" duration="1980000" />
+      <workItem from="1506678664871" duration="3237000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54216000" />
+    <option name="totallyTimeSpent" value="55473000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1936" height="1056" extended-state="0" />
@@ -784,8 +782,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/uncode/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="183" column="1" selection-start-line="183" selection-start-column="1" selection-end-line="183" selection-end-column="1" />
+        <state relative-caret-position="236">
+          <caret line="175" column="1" selection-start-line="175" selection-start-column="1" selection-end-line="175" selection-end-column="1" />
           <folding />
         </state>
       </provider>

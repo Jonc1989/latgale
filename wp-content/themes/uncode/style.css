@@ -168,6 +168,12 @@ span.wpcf7-list-item{
         width: 80%;
     }
 }
+@media (max-width: 1200px) {
+    .modal {
+        left: 25%;
+        width: 75%;
+    }
+}
 @media (max-width: 975px) {
     .lang-switch{
         display: none;
@@ -180,6 +186,11 @@ span.wpcf7-list-item{
     }
     .logo-image.logo-skinnable{
         max-height: 100px;
+    }
+    .modal {
+        left: 0%;
+        width: 100%; /* Full width */
+
     }
 }
 @media (min-width: 768px) {
