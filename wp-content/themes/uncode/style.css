@@ -94,6 +94,9 @@ span.wpcf7-list-item{
     text-align: center;
     height: 0px;
 }
+.lang-switch-mobile{
+    display: none;
+}
 .bx-wrapper{
     margin-top: 40px;
     //display: none;
@@ -168,6 +171,15 @@ span.wpcf7-list-item{
 @media (max-width: 975px) {
     .lang-switch{
         display: none;
+    }
+    .lang-switch-mobile{
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+    .logo-image.logo-skinnable{
+        max-height: 100px;
     }
 }
 @media (min-width: 768px) {

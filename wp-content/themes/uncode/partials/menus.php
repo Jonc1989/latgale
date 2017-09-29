@@ -59,14 +59,17 @@ if (!class_exists('unmenu')) {
 			$url = get_option('home');
 
 			$switch = '<div class="lang-switch"><a href="#"><img src="' . $image_path . '"> </a>';
+			$switch_mobile = '<div class="lang-switch-mobile"><a href="#"><img src="' . $image_path . '"> </a>';
 			foreach(qtrans_getSortedLanguages() as $language) {
 
 				?>
 				<?php if( $language != substr(get_locale(),0, 2)){
 					$switch .= '<a href = "' . qtrans_convertURL($current_url, $language, false, true) . '" ><img src="' . content_url() . '/plugins/qtranslate-x/flags/' . $language .'.png"></a >';
+					$switch_mobile .= '<a href = "' . qtrans_convertURL($current_url, $language, false, true) . '" ><img src="' . content_url() . '/plugins/qtranslate-x/flags/' . $language .'.png"></a >';
 				}
 			}
 			$switch .= '</div>';
+			$switch_mobile .= '</div>';
 //Language switch for menu
 
 
@@ -491,7 +494,7 @@ if (!class_exists('unmenu')) {
 																					"echo"            => 0)
 																				).(($search !== '' || $type === 'hmenu-justify') ? '<div class="nav navbar-nav navbar-nav-last">'.$search.
 
-					                                                                                                               /*$switch.*/
+					                                                                                                               $switch.
 
 					                                                                                                               '</div>' : '');
 						if ($no_secondary !== 'on')
@@ -741,7 +744,8 @@ if (!class_exists('unmenu')) {
 						$this->html .= 			'<div class="row-inner restrict row-brand">
 																	<div id="logo-container-mobile" class="col-lg-12 logo-container">
 																		<div class="style-'.$stylemain.'">
-																			'.$logoDiv.'
+																			'.$logoDiv. $switch_mobile .'
+																			
 																		</div>
 																		<div class="mmb-container">'.$woo_icon_mobile.'<div class="mobile-menu-button '.$buttonstyle_primary.' lines-button x2"><span class="lines"></span></div></div>
 																	</div>
